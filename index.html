@@ -1,879 +1,400 @@
+<!DOCTYPE html>
 <html lang="id">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OfficePro - Manajemen Kantor</title>
+    <title>Untuk Divianka Shella ❤️</title>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        body {
+            min-height: 100vh;
+            font-family: Georgia, "Times New Roman", serif;
+            background: linear-gradient(135deg, #2b0a16, #6e1d35, #a83f5b);
+            color: #fff;
+            overflow-x: hidden;
+        }
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        /* Hiasan hati di latar belakang */
+        .hearts {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            color: rgba(255, 255, 255, 0.18);
+            font-size: 25px;
+            animation: naik 8s linear infinite;
+        }
+
+        .heart:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 25%;
+            animation-delay: 2s;
+            font-size: 35px;
+        }
+
+        .heart:nth-child(3) {
+            left: 45%;
+            animation-delay: 4s;
+        }
+
+        .heart:nth-child(4) {
+            left: 65%;
+            animation-delay: 1s;
+            font-size: 40px;
+        }
+
+        .heart:nth-child(5) {
+            left: 85%;
+            animation-delay: 3s;
+        }
+
+        @keyframes naik {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 90%;
+            max-width: 850px;
+            margin: auto;
+            padding: 70px 0;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 35px;
+            animation: muncul 1.5s ease;
+        }
+
+        .judul .hati {
+            font-size: 55px;
+            animation: berdenyut 1.5s infinite;
+            display: inline-block;
+        }
+
+        .judul h1 {
+            margin-top: 10px;
+            font-size: clamp(32px, 6vw, 58px);
+            font-weight: normal;
+        }
+
+        .judul p {
+            margin-top: 12px;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            color: #ffdce5;
+            letter-spacing: 1px;
+        }
+
+        @keyframes berdenyut {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .surat {
+            background: rgba(255, 248, 250, 0.97);
+            color: #3b1a23;
+            border-radius: 20px;
+            padding: clamp(30px, 6vw, 60px);
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.35),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            animation: muncul 1.8s ease;
+            position: relative;
+        }
+
+        .surat::before {
+            content: "♥";
+            position: absolute;
+            top: 18px;
+            right: 25px;
+            color: #c33c5c;
+            font-size: 24px;
+            opacity: 0.7;
+        }
+
+        .tanggal {
+            text-align: right;
+            color: #8a5363;
+            font-size: 14px;
+            margin-bottom: 35px;
+            font-family: Arial, sans-serif;
+        }
+
+        .pembuka {
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: #8f2847;
+        }
+
+        .isi {
+            font-size: 17px;
+            line-height: 2;
+            text-align: justify;
+        }
+
+        .isi p {
+            margin-bottom: 22px;
+        }
+
+        .penutup {
+            margin-top: 40px;
+            text-align: right;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .nama {
+            margin-top: 10px;
+            font-size: 24px;
+            color: #a52f50;
+            font-weight: bold;
+        }
+
+        .tombol-area {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        button {
+            border: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            background: #b83255;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 8px 20px rgba(184, 50, 85, 0.3);
+        }
+
+        button:hover {
+            background: #8f2847;
+            transform: translateY(-3px);
+        }
+
+        #pesan {
+            display: none;
+            margin-top: 25px;
+            text-align: center;
+            color: #a52f50;
+            font-size: 19px;
+            line-height: 1.7;
+            animation: muncul 1s ease;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #ffdce5;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 0;
+            }
+
+            .surat {
+                padding: 28px 22px;
+            }
+
+            .isi {
+                font-size: 16px;
+                line-height: 1.85;
+            }
+
+            .pembuka {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="app">
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-
-        <div class="logo">
-            <div class="logo-icon">O</div>
-            <div>
-                <h2>Vishal Office</h2>
-                <span>Management System</span>
-            </div>
-        </div>
-
-        <nav>
-
-            <p class="menu-title">MENU UTAMA</p>
-
-            <button class="nav-item active" data-page="dashboard">
-                🏠 <span>Dashboard Karyawan</span>
-            </button>
-
-            <button class="nav-item" data-page="employees">
-                👥 <span> Data Diri Karyawan</span>
-            </button>
-
-            <button class="nav-item" data-page="attendance">
-                🕐 <span>Absensi</span>
-            </button>
-
-            <button class="nav-item" data-page="tasks">
-                📋 <span>Project</span>
-            </button>
-
-            <button class="nav-item" data-page="documents">
-                📁 <span>Dokumen</span>
-            </button>
-
-            <button class="nav-item" data-page="finance">
-                💰 <span>Keuangan</span>
-            </button>
-
-            <p class="menu-title">LAINNYA</p>
-
-            <button class="nav-item" data-page="reports">
-                📊 <span>Laporan</span>
-            </button>
-
-            <button class="nav-item" data-page="settings">
-                ⚙️ <span>Pengaturan</span>
-            </button>
-
-        </nav>
-
-        <div class="sidebar-bottom">
-            <div class="user-card">
-                <div class="avatar">VN</div>
-                <div>
-                    <strong>Admin</strong>
-                    <small>Administrator</small>
-                </div>
-            </div>
-        </div>
-
-    </aside>
-
-
-    <!-- MAIN -->
-    <main class="main">
-
-        <!-- TOPBAR -->
-        <header class="topbar">
-
-            <div class="mobile-logo">
-                OfficePro
-            </div>
-
-            <div class="search">
-                🔎
-                <input type="text" id="globalSearch" placeholder="Cari sesuatu...">
-            </div>
-
-            <div class="top-actions">
-
-                <button class="icon-btn" id="themeBtn">
-                    🌙
-                </button>
-
-                <button class="icon-btn notification">
-                    🔔
-                    <span>3</span>
-                </button>
-
-                <div class="profile">
-                    <div class="avatar">VN</div>
-                    <div>
-                        <strong>Admin</strong>
-                        <small>Administrator</small>
-                    </div>
-                </div>
-
-            </div>
-
-        </header>
-
-
-        <!-- CONTENT -->
-        <section class="content">
-
-
-            <!-- DASHBOARD -->
-            <div class="page active-page" id="dashboard">
-
-                <div class="page-header">
-                    <div>
-                        <h1>Wellcome to Office 👋</h1>
-                        <p>Berikut aktivitas kantor hari ini.</p>
-                    </div>
-
-                    <button class="primary-btn" onclick="openModal('employeeModal')">
-                        + Tambah Karyawan
-                    </button>
-                </div>
-
-
-                <!-- STATISTICS -->
-                <div class="stats-grid">
-
-                    <div class="stat-card">
-                        <div class="stat-icon blue">👥</div>
-                        <div>
-                            <span>Total Karyawan</span>
-                            <h2 id="employeeCount">24</h2>
-                            <small class="positive">↑ 8% bulan ini</small>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon green">🕐</div>
-                        <div>
-                            <span>Hadir Hari Ini</span>
-                            <h2>21</h2>
-                            <small class="positive">87.5% kehadiran</small>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon orange">📋</div>
-                        <div>
-                            <span>Tugas Aktif</span>
-                            <h2>12</h2>
-                            <small>4 harus selesai hari ini</small>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon purple">📁</div>
-                        <div>
-                            <span>Dokumen</span>
-                            <h2>148</h2>
-                            <small>12 dokumen baru</small>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="dashboard-grid">
-
-                    <!-- CHART -->
-                    <div class="panel chart-panel">
-
-                        <div class="panel-header">
-                            <div>
-                                <h3>Aktivitas Kantor</h3>
-                                <p>Data aktivitas selama minggu ini</p>
-                            </div>
-
-                            <select>
-                                <option>Minggu ini</option>
-                                <option>Bulan ini</option>
-                                <option>Tahun ini</option>
-                            </select>
-                        </div>
-
-                        <canvas id="activityChart"></canvas>
-
-                    </div>
-
-
-                    <!-- TASK -->
-                    <div class="panel">
-
-                        <div class="panel-header">
-                            <div>
-                                <h3>Tugas Terbaru</h3>
-                                <p>Aktivitas pekerjaan</p>
-                            </div>
-
-                            <button class="text-btn" onclick="showPage('tasks')">
-                                Lihat semua
-                            </button>
-                        </div>
-
-                        <div class="task-list">
-
-                            <div class="task">
-                                <div class="task-check done">✓</div>
-                                <div>
-                                    <strong>Laporan keuangan</strong>
-                                    <small>Finance • Hari ini</small>
-                                </div>
-                                <span class="badge green-badge">Selesai</span>
-                            </div>
-
-                            <div class="task">
-                                <div class="task-check">○</div>
-                                <div>
-                                    <strong>Meeting client</strong>
-                                    <small>Marketing • 14:00</small>
-                                </div>
-                                <span class="badge orange-badge">Proses</span>
-                            </div>
-
-                            <div class="task">
-                                <div class="task-check">○</div>
-                                <div>
-                                    <strong>Update website</strong>
-                                    <small>IT • Besok</small>
-                                </div>
-                                <span class="badge blue-badge">Baru</span>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- RECENT EMPLOYEES -->
-                <div class="panel">
-
-                    <div class="panel-header">
-
-                        <div>
-                            <h3>Karyawan Terbaru</h3>
-                            <p>Daftar karyawan yang baru ditambahkan</p>
-                        </div>
-
-                        <button class="text-btn" onclick="showPage('employees')">
-                            Lihat semua
-                        </button>
-
-                    </div>
-
-                    <div class="table-wrapper">
-
-                        <table>
-
-                            <thead>
-                                <tr>
-                                    <th>Karyawan</th>
-                                    <th>Jabatan</th>
-                                    <th>Departemen</th>
-                                    <th>Status</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-
-                            <tbody id="employeeTable">
-
-                                <tr>
-                                    <td>
-                                        <div class="employee">
-                                            <div class="avatar blue-avatar">AR</div>
-                                            <div>
-                                                <strong>Andi Ramadhan</strong>
-                                                <small>andi@officepro.com</small>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <td>Manager</td>
-                                    <td>Marketing</td>
-
-                                    <td>
-                                        <span class="badge green-badge">Aktif</span>
-                                    </td>
-
-                                    <td>
-                                        <button class="action-btn">⋮</button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="employee">
-                                            <div class="avatar purple-avatar">SA</div>
-                                            <div>
-                                                <strong>Siti Amelia</strong>
-                                                <small>siti@officepro.com</small>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <td>Accountant</td>
-                                    <td>Finance</td>
-
-                                    <td>
-                                        <span class="badge green-badge">Aktif</span>
-                                    </td>
-
-                                    <td>
-                                        <button class="action-btn">⋮</button>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- EMPLOYEES -->
-            <div class="page" id="employees">
-
-                <div class="page-header">
-
-                    <div>
-                        <h1>Data Karyawan</h1>
-                        <p>Kelola seluruh data karyawan perusahaan.</p>
-                    </div>
-
-                    <button class="primary-btn" onclick="openModal('employeeModal')">
-                        + Tambah Karyawan
-                    </button>
-
-                </div>
-
-                <div class="panel">
-
-                    <div class="toolbar">
-
-                        <div class="search-table">
-                            🔎
-                            <input id="employeeSearch" placeholder="Cari karyawan...">
-                        </div>
-
-                        <select>
-                            <option>Semua Departemen</option>
-                            <option>IT</option>
-                            <option>Finance</option>
-                            <option>Marketing</option>
-                            <option>HR</option>
-                        </select>
-
-                    </div>
-
-                    <div class="table-wrapper">
-
-                        <table>
-
-                            <thead>
-                                <tr>
-                                    <th>Nama</th>
-                                    <th>ID</th>
-                                    <th>Jabatan</th>
-                                    <th>Departemen</th>
-                                    <th>Status</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-
-                            <tbody id="allEmployees">
-
-                                <tr>
-                                    <td>
-                                        <div class="employee">
-                                            <div class="avatar blue-avatar">AR</div>
-                                            <strong>Andi Ramadhan</strong>
-                                        </div>
-                                    </td>
-
-                                    <td>EMP-001</td>
-                                    <td>Manager</td>
-                                    <td>Marketing</td>
-
-                                    <td>
-                                        <span class="badge green-badge">Aktif</span>
-                                    </td>
-
-                                    <td>
-                                        <button class="action-btn">✏️</button>
-                                        <button class="action-btn">🗑️</button>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- ATTENDANCE -->
-            <div class="page" id="attendance">
-
-                <div class="page-header">
-
-                    <div>
-                        <h1>Absensi</h1>
-                        <p>Pantau kehadiran karyawan.</p>
-                    </div>
-
-                    <button class="primary-btn" onclick="checkIn()">
-                        🕐 Absen Sekarang
-                    </button>
-
-                </div>
-
-                <div class="stats-grid">
-
-                    <div class="stat-card">
-                        <div class="stat-icon green">✓</div>
-                        <div>
-                            <span>Hadir</span>
-                            <h2>21</h2>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon orange">⏰</div>
-                        <div>
-                            <span>Terlambat</span>
-                            <h2>2</h2>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon red">×</div>
-                        <div>
-                            <span>Tidak Hadir</span>
-                            <h2>1</h2>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="panel">
-
-                    <div class="panel-header">
-                        <div>
-                            <h3>Absensi Hari Ini</h3>
-                            <p>16 Agustus 2026</p>
-                        </div>
-                    </div>
-
-                    <div class="table-wrapper">
-
-                        <table>
-
-                            <thead>
-                                <tr>
-                                    <th>Karyawan</th>
-                                    <th>Jam Masuk</th>
-                                    <th>Jam Keluar</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-
-                                <tr>
-                                    <td>Andi Ramadhan</td>
-                                    <td>07:52</td>
-                                    <td>17:05</td>
-                                    <td><span class="badge green-badge">Hadir</span></td>
-                                </tr>
-
-                                <tr>
-                                    <td>Siti Amelia</td>
-                                    <td>08:17</td>
-                                    <td>-</td>
-                                    <td><span class="badge orange-badge">Terlambat</span></td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- TASKS -->
-            <div class="page" id="tasks">
-
-                <div class="page-header">
-
-                    <div>
-                        <h1>Manajemen Tugas</h1>
-                        <p>Kelola pekerjaan dan target tim.</p>
-                    </div>
-
-                    <button class="primary-btn" onclick="addTask()">
-                        + Tambah Tugas
-                    </button>
-
-                </div>
-
-                <div class="task-board">
-
-                    <div class="task-column">
-
-                        <div class="column-title">
-                            <span>Belum Mulai</span>
-                            <b>3</b>
-                        </div>
-
-                        <div class="kanban-card">
-                            <span class="badge blue-badge">IT</span>
-                            <h3>Update Website</h3>
-                            <p>Perbarui halaman utama website perusahaan.</p>
-                            <div class="card-footer">
-                                👤 Tim IT
-                                <span>Besok</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="task-column">
-
-                        <div class="column-title">
-                            <span>Sedang Dikerjakan</span>
-                            <b>4</b>
-                        </div>
-
-                        <div class="kanban-card">
-                            <span class="badge orange-badge">Marketing</span>
-                            <h3>Meeting Client</h3>
-                            <p>Presentasi proposal kepada client.</p>
-                            <div class="card-footer">
-                                👤 Andi
-                                <span>Hari ini</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="task-column">
-
-                        <div class="column-title">
-                            <span>Selesai</span>
-                            <b>8</b>
-                        </div>
-
-                        <div class="kanban-card completed">
-                            <span class="badge green-badge">Finance</span>
-                            <h3>Laporan Keuangan</h3>
-                            <p>Laporan keuangan bulanan.</p>
-                            <div class="card-footer">
-                                👤 Siti
-                                <span>✓ Selesai</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- DOCUMENTS -->
-            <div class="page" id="documents">
-
-                <div class="page-header">
-
-                    <div>
-                        <h1>Dokumen</h1>
-                        <p>Kelola dokumen perusahaan.</p>
-                    </div>
-
-                    <button class="primary-btn">
-                        + Upload Dokumen
-                    </button>
-
-                </div>
-
-                <div class="document-grid">
-
-                    <div class="document-card">
-                        <div class="file-icon pdf">PDF</div>
-                        <h3>Laporan Keuangan</h3>
-                        <p>Finance • 2.4 MB</p>
-                        <span>16 Agustus 2026</span>
-                    </div>
-
-                    <div class="document-card">
-                        <div class="file-icon doc">DOC</div>
-                        <h3>Kontrak Kerja</h3>
-                        <p>HR • 1.8 MB</p>
-                        <span>15 Agustus 2026</span>
-                    </div>
-
-                    <div class="document-card">
-                        <div class="file-icon xls">XLS</div>
-                        <h3>Data Gaji</h3>
-                        <p>Finance • 890 KB</p>
-                        <span>14 Agustus 2026</span>
-                    </div>
-
-                    <div class="document-card">
-                        <div class="file-icon ppt">PPT</div>
-                        <h3>Presentasi Client</h3>
-                        <p>Marketing • 4.2 MB</p>
-                        <span>13 Agustus 2026</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- FINANCE -->
-            <div class="page" id="finance">
-
-                <div class="page-header">
-
-                    <div>
-                        <h1>Keuangan</h1>
-                        <p>Ringkasan keuangan perusahaan.</p>
-                    </div>
-
-                    <button class="primary-btn">
-                        + Transaksi
-                    </button>
-
-                </div>
-
-                <div class="stats-grid">
-
-                    <div class="stat-card">
-                        <div class="stat-icon green">↗</div>
-                        <div>
-                            <span>Pemasukan</span>
-                            <h2>Rp 85 Jt</h2>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon red">↘</div>
-                        <div>
-                            <span>Pengeluaran</span>
-                            <h2>Rp 42 Jt</h2>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon blue">💰</div>
-                        <div>
-                            <span>Saldo</span>
-                            <h2>Rp 43 Jt</h2>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="panel">
-
-                    <div class="panel-header">
-
-                        <div>
-                            <h3>Transaksi Terbaru</h3>
-                        </div>
-
-                    </div>
-
-                    <div class="table-wrapper">
-
-                        <table>
-
-                            <thead>
-                                <tr>
-                                    <th>Tanggal</th>
-                                    <th>Keterangan</th>
-                                    <th>Kategori</th>
-                                    <th>Jumlah</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-
-                                <tr>
-                                    <td>16/08/2026</td>
-                                    <td>Pembayaran Client</td>
-                                    <td>Income</td>
-                                    <td class="income">+ Rp 15.000.000</td>
-                                </tr>
-
-                                <tr>
-                                    <td>15/08/2026</td>
-                                    <td>Operasional Kantor</td>
-                                    <td>Expense</td>
-                                    <td class="expense">- Rp 4.500.000</td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- REPORTS -->
-            <div class="page" id="reports">
-
-                <div class="page-header">
-
-                    <div>
-                        <h1>Laporan</h1>
-                        <p>Analisis data perusahaan.</p>
-                    </div>
-
-                    <button class="primary-btn">
-                        📥 Export Laporan
-                    </button>
-
-                </div>
-
-                <div class="panel report-panel">
-
-                    <h3>Performa Bulanan</h3>
-
-                    <canvas id="reportChart"></canvas>
-
-                </div>
-
-            </div>
-
-
-            <!-- SETTINGS -->
-            <div class="page" id="settings">
-
-                <div class="page-header">
-
-                    <div>
-                        <h1>Pengaturan</h1>
-                        <p>Atur sistem aplikasi kantor.</p>
-                    </div>
-
-                </div>
-
-                <div class="settings-grid">
-
-                    <div class="setting-card">
-                        <h3>👤 Profil</h3>
-                        <p>Kelola informasi administrator.</p>
-                        <button>Edit Profil</button>
-                    </div>
-
-                    <div class="setting-card">
-                        <h3>🔔 Notifikasi</h3>
-                        <p>Atur pemberitahuan aplikasi.</p>
-                        <button>Atur Notifikasi</button>
-                    </div>
-
-                    <div class="setting-card">
-                        <h3>🔐 Keamanan</h3>
-                        <p>Password dan keamanan akun.</p>
-                        <button>Kelola Keamanan</button>
-                    </div>
-
-                </div>
-
-            </div>
-
+    <div class="hearts">
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+    </div>
+
+    <main class="container">
+
+        <section class="judul">
+            <div class="hati">❤️</div>
+            <h1>Untuk Divianka Shella</h1>
+            <p>Sebuah surat yang kutulis dengan penuh ketulusan</p>
         </section>
+
+        <article class="surat">
+
+            <div class="tanggal">
+                6 September 2026
+            </div>
+
+            <div class="pembuka">
+                Untukmu, Divianka Shella.
+            </div>
+
+            <div class="isi">
+
+                <p>
+                    Ada banyak hal yang sulit untuk diungkapkan hanya dengan
+                    kata-kata. Namun, melalui surat sederhana ini, aku ingin
+                    menyampaikan sesuatu yang mungkin selama ini belum dapat
+                    kusampaikan dengan sempurna kepadamu.
+                </p>
+
+                <p>
+                    Divianka, sejak kehadiranmu dalam hidupku, ada sesuatu
+                    yang terasa berbeda. Hari-hari yang biasa menjadi lebih
+                    berarti, dan hal-hal sederhana terasa lebih indah ketika
+                    ada dirimu di dalamnya.
+                </p>
+
+                <p>
+                    Aku menyukai caramu menjadi dirimu sendiri. Aku menghargai
+                    senyummu, caramu berbicara, perhatian kecil yang kamu
+                    berikan, bahkan hal-hal sederhana yang mungkin menurutmu
+                    tidak berarti apa-apa. Bagiku, semuanya memiliki tempat
+                    tersendiri.
+                </p>
+
+                <p>
+                    Aku tidak ingin berjanji bahwa setiap hari bersamaku akan
+                    selalu sempurna. Akan ada hari ketika keadaan tidak sesuai
+                    dengan harapan. Akan ada perbedaan pendapat dan mungkin
+                    kesalahpahaman. Namun, jika kamu bersedia, aku ingin
+                    belajar untuk menghadapi semuanya bersama-sama.
+                </p>
+
+                <p>
+                    Aku ingin menjadi seseorang yang dapat kamu percaya,
+                    seseorang yang bersedia mendengarkan ceritamu, menemani
+                    langkahmu, menghargai perasaanmu, dan tetap berada di
+                    sisimu ketika keadaan tidak mudah.
+                </p>
+
+                <p>
+                    Terima kasih karena telah menjadi bagian dari hidupku.
+                    Terima kasih untuk setiap tawa, percakapan, perhatian,
+                    dan waktu yang telah kamu berikan. Mungkin aku tidak
+                    selalu pandai menunjukkan perasaanku, tetapi percayalah,
+                    kehadiranmu sangat berarti bagiku.
+                </p>
+
+                <p>
+                    Jika suatu hari nanti kamu bertanya mengapa aku memilihmu,
+                    jawabanku sederhana: karena bersamamu, aku merasa bahwa
+                    aku tidak hanya menemukan seseorang untuk dicintai, tetapi
+                    juga seseorang yang ingin aku hargai dan jaga dengan
+                    sepenuh hati.
+                </p>
+
+                <p>
+                    Semoga apa pun yang terjadi di kemudian hari, kita dapat
+                    terus saling menghargai, saling mendukung, dan menjaga
+                    perasaan satu sama lain. Aku tidak tahu seperti apa
+                    perjalanan kita nantinya, tetapi untuk saat ini, aku ingin
+                    menikmati setiap langkah yang dapat kita lalui bersama.
+                </p>
+
+                <p>
+                    Divianka Shella, aku mungkin tidak memiliki kata-kata
+                    yang paling indah untuk menggambarkan perasaanku. Namun,
+                    satu hal yang ingin kamu ketahui: <strong>aku menyayangimu
+                    dengan tulus.</strong>
+                </p>
+
+            </div>
+
+            <div class="penutup">
+                Dengan penuh kasih,<br>
+                <div class="nama">Seseorang yang menyayangimu ❤️</div>
+            </div>
+
+            <div class="tombol-area">
+                <button onclick="tampilkanPesan()">
+                    Klik untuk pesan terakhir ❤️
+                </button>
+
+                <div id="pesan">
+                    "Semoga aku selalu memiliki kesempatan<br>
+                    untuk membuatmu tersenyum."
+                    <br><br>
+                    ❤️
+                </div>
+            </div>
+
+        </article>
+
+        <footer>
+            Dibuat dengan ketulusan, untuk seseorang yang istimewa.
+        </footer>
 
     </main>
 
-</div>
+    <script>
+        function tampilkanPesan() {
+            const pesan = document.getElementById("pesan");
 
-
-<!-- MODAL TAMBAH KARYAWAN -->
-
-<div class="modal" id="employeeModal">
-
-    <div class="modal-box">
-
-        <div class="modal-header">
-            <h2>Tambah Karyawan</h2>
-            <button onclick="closeModal('employeeModal')">×</button>
-        </div>
-
-        <form id="employeeForm">
-
-            <label>Nama Lengkap</label>
-            <input type="text" id="employeeName" required>
-
-            <label>Email</label>
-            <input type="email" id="employeeEmail" required>
-
-            <label>Jabatan</label>
-            <input type="text" id="employeePosition" required>
-
-            <label>Departemen</label>
-
-            <select id="employeeDepartment">
-                <option>IT</option>
-                <option>Finance</option>
-                <option>Marketing</option>
-                <option>HR</option>
-                <option>Management</option>
-            </select>
-
-            <button class="primary-btn full-btn" type="submit">
-                Simpan Karyawan
-            </button>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<!-- TOAST -->
-
-<div class="toast" id="toast">
-    <span>✓</span>
-    <div>
-        <strong>Berhasil!</strong>
-        <p>Data berhasil disimpan.</p>
-    </div>
-</div>
-
-
-<script src="script.js"></script>
+            if (pesan.style.display === "block") {
+                pesan.style.display = "none";
+            } else {
+                pesan.style.display = "block";
+            }
+        }
+    </script>
 
 </body>
-    </head>
 </html>
