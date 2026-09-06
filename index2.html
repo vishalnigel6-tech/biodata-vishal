@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Divianka Shella ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Georgia, "Times New Roman", serif;
+            background: linear-gradient(135deg, #2b0a16, #6e1d35, #a83f5b);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Hiasan hati di latar belakang */
+        .hearts {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            color: rgba(255, 255, 255, 0.18);
+            font-size: 25px;
+            animation: naik 8s linear infinite;
+        }
+
+        .heart:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 25%;
+            animation-delay: 2s;
+            font-size: 35px;
+        }
+
+        .heart:nth-child(3) {
+            left: 45%;
+            animation-delay: 4s;
+        }
+
+        .heart:nth-child(4) {
+            left: 65%;
+            animation-delay: 1s;
+            font-size: 40px;
+        }
+
+        .heart:nth-child(5) {
+            left: 85%;
+            animation-delay: 3s;
+        }
+
+        @keyframes naik {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 90%;
+            max-width: 850px;
+            margin: auto;
+            padding: 70px 0;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 35px;
+            animation: muncul 1.5s ease;
+        }
+
+        .judul .hati {
+            font-size: 55px;
+            animation: berdenyut 1.5s infinite;
+            display: inline-block;
+        }
+
+        .judul h1 {
+            margin-top: 10px;
+            font-size: clamp(32px, 6vw, 58px);
+            font-weight: normal;
+        }
+
+        .judul p {
+            margin-top: 12px;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            color: #ffdce5;
+            letter-spacing: 1px;
+        }
+
+        @keyframes berdenyut {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .surat {
+            background: rgba(255, 248, 250, 0.97);
+            color: #3b1a23;
+            border-radius: 20px;
+            padding: clamp(30px, 6vw, 60px);
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.35),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            animation: muncul 1.8s ease;
+            position: relative;
+        }
+
+        .surat::before {
+            content: "♥";
+            position: absolute;
+            top: 18px;
+            right: 25px;
+            color: #c33c5c;
+            font-size: 24px;
+            opacity: 0.7;
+        }
+
+        .tanggal {
+            text-align: right;
+            color: #8a5363;
+            font-size: 14px;
+            margin-bottom: 35px;
+            font-family: Arial, sans-serif;
+        }
+
+        .pembuka {
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: #8f2847;
+        }
+
+        .isi {
+            font-size: 17px;
+            line-height: 2;
+            text-align: justify;
+        }
+
+        .isi p {
+            margin-bottom: 22px;
+        }
+
+        .penutup {
+            margin-top: 40px;
+            text-align: right;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .nama {
+            margin-top: 10px;
+            font-size: 24px;
+            color: #a52f50;
+            font-weight: bold;
+        }
+
+        .tombol-area {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        button {
+            border: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            background: #b83255;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 8px 20px rgba(184, 50, 85, 0.3);
+        }
+
+        button:hover {
+            background: #8f2847;
+            transform: translateY(-3px);
+        }
+
+        #pesan {
+            display: none;
+            margin-top: 25px;
+            text-align: center;
+            color: #a52f50;
+            font-size: 19px;
+            line-height: 1.7;
+            animation: muncul 1s ease;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #ffdce5;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 0;
+            }
+
+            .surat {
+                padding: 28px 22px;
+            }
+
+            .isi {
+                font-size: 16px;
+                line-height: 1.85;
+            }
+
+            .pembuka {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hearts">
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+    </div>
+
+    <main class="container">
+
+        <section class="judul">
+            <div class="hati">❤️</div>
+            <h1>Untuk Divianka Shella</h1>
+            <p>Sebuah surat yang kutulis dengan penuh ketulusan</p>
+        </section>
+
+        <article class="surat">
+
+            <div class="tanggal">
+                6 September 2026
+            </div>
+
+            <div class="pembuka">
+                Untukmu, Divianka Shella.
+            </div>
+
+            <div class="isi">
+
+                <p>
+                    Ada banyak hal yang sulit untuk diungkapkan hanya dengan
+                    kata-kata. Namun, melalui surat sederhana ini, aku ingin
+                    menyampaikan sesuatu yang mungkin selama ini belum dapat
+                    kusampaikan dengan sempurna kepadamu.
+                </p>
+
+                <p>
+                    Divianka, sejak kehadiranmu dalam hidupku, ada sesuatu
+                    yang terasa berbeda. Hari-hari yang biasa menjadi lebih
+                    berarti, dan hal-hal sederhana terasa lebih indah ketika
+                    ada dirimu di dalamnya.
+                </p>
+
+                <p>
+                    Aku menyukai caramu menjadi dirimu sendiri. Aku menghargai
+                    senyummu, caramu berbicara, perhatian kecil yang kamu
+                    berikan, bahkan hal-hal sederhana yang mungkin menurutmu
+                    tidak berarti apa-apa. Bagiku, semuanya memiliki tempat
+                    tersendiri.
+                </p>
+
+                <p>
+                    Aku tidak ingin berjanji bahwa setiap hari bersamaku akan
+                    selalu sempurna. Akan ada hari ketika keadaan tidak sesuai
+                    dengan harapan. Akan ada perbedaan pendapat dan mungkin
+                    kesalahpahaman. Namun, jika kamu bersedia, aku ingin
+                    belajar untuk menghadapi semuanya bersama-sama.
+                </p>
+
+                <p>
+                    Aku ingin menjadi seseorang yang dapat kamu percaya,
+                    seseorang yang bersedia mendengarkan ceritamu, menemani
+                    langkahmu, menghargai perasaanmu, dan tetap berada di
+                    sisimu ketika keadaan tidak mudah.
+                </p>
+
+                <p>
+                    Terima kasih karena telah menjadi bagian dari hidupku.
+                    Terima kasih untuk setiap tawa, percakapan, perhatian,
+                    dan waktu yang telah kamu berikan. Mungkin aku tidak
+                    selalu pandai menunjukkan perasaanku, tetapi percayalah,
+                    kehadiranmu sangat berarti bagiku.
+                </p>
+
+                <p>
+                    Jika suatu hari nanti kamu bertanya mengapa aku memilihmu,
+                    jawabanku sederhana: karena bersamamu, aku merasa bahwa
+                    aku tidak hanya menemukan seseorang untuk dicintai, tetapi
+                    juga seseorang yang ingin aku hargai dan jaga dengan
+                    sepenuh hati.
+                </p>
+
+                <p>
+                    Semoga apa pun yang terjadi di kemudian hari, kita dapat
+                    terus saling menghargai, saling mendukung, dan menjaga
+                    perasaan satu sama lain. Aku tidak tahu seperti apa
+                    perjalanan kita nantinya, tetapi untuk saat ini, aku ingin
+                    menikmati setiap langkah yang dapat kita lalui bersama.
+                </p>
+
+                <p>
+                    Divianka Shella, aku mungkin tidak memiliki kata-kata
+                    yang paling indah untuk menggambarkan perasaanku. Namun,
+                    satu hal yang ingin kamu ketahui: <strong>aku menyayangimu
+                    dengan tulus.</strong>
+                </p>
+
+            </div>
+
+            <div class="penutup">
+                Dengan penuh kasih,<br>
+                <div class="nama">Seseorang yang menyayangimu ❤️</div>
+            </div>
+
+            <div class="tombol-area">
+                <button onclick="tampilkanPesan()">
+                    Klik untuk pesan terakhir ❤️
+                </button>
+
+                <div id="pesan">
+                    "Semoga aku selalu memiliki kesempatan<br>
+                    untuk membuatmu tersenyum."
+                    <br><br>
+                    ❤️
+                </div>
+            </div>
+
+        </article>
+
+        <footer>
+            Dibuat dengan ketulusan, untuk seseorang yang istimewa.
+        </footer>
+
+    </main>
+
+    <script>
+        function tampilkanPesan() {
+            const pesan = document.getElementById("pesan");
+
+            if (pesan.style.display === "block") {
+                pesan.style.display = "none";
+            } else {
+                pesan.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
