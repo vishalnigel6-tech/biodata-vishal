@@ -5,16 +5,16 @@
 const defaultData = {
     nama: "Vishal Pratama",
     panggilan: "Vishal",
-    ttl: "Medan, 15 Januari 2010",
+    ttl: "Medan, 22 Juli 2009",
     gender: "Laki-laki",
     alamat: "Medan, Sumatera Utara",
-    sekolah: "SMK Contoh Indonesia",
+    sekolah: "SMK BRIGJEND KATAMSO I",
     kelas: "XII",
     jurusan: "Rekayasa Perangkat Lunak",
     hobi: "Coding, Musik, Gaming",
     citaCita: "Software Developer",
-    email: "vishal@example.com",
-    telepon: "0812-3456-7890",
+    email: "vishalnigel*@example.com",
+    telepon: "0821-7739-6716",
     deskripsi:
         "Halo! Saya adalah seorang pelajar yang memiliki ketertarikan pada teknologi, desain, dan pemrograman. Saya senang mempelajari hal-hal baru dan mengembangkan kemampuan saya."
 };
