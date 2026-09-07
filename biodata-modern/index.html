@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Data Diri | Profil Saya</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Decoration -->
+    <div class="background-circle circle-one"></div>
+    <div class="background-circle circle-two"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-user"></i>
+            <span>My Profile</span>
+        </div>
+
+        <button id="darkModeBtn" class="icon-btn" title="Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Profile Card -->
+        <section class="profile-card">
+
+            <!-- Profile Header -->
+            <div class="profile-header">
+
+                <div class="profile-photo">
+                    <img
+                        src="https://i.pravatar.cc/300?img=12"
+                        alt="Foto Profil"
+                    >
+                </div>
+
+                <div class="profile-intro">
+                    <span class="small-title">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Personal Profile
+                    </span>
+
+                    <h1 id="displayNama">Vishal Nigel</h1>
+
+                    <p id="displaySekolah">
+                        Pelajar • SMK Contoh Indonesia
+                    </p>
+
+                    <div class="social-icons">
+                    <div class="social-icons">
+
+    <!-- Instagram -->
+    <a
+        href="https://www.instagram.com/vishall22_/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        title="Instagram"
+    >
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+</div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Short Description -->
+            <div class="about-section">
+
+                <div class="section-title">
+                    <i class="fa-solid fa-user"></i>
+                    <h2>Tentang Saya</h2>
+                </div>
+
+                <p id="displayDeskripsi">
+                    Halo! Saya adalah seorang pelajar yang memiliki
+                    ketertarikan pada teknologi, desain, dan pemrograman.
+                    Saya senang mempelajari hal-hal baru dan mengembangkan
+                    kemampuan saya.
+                </p>
+
+            </div>
+
+
+            <!-- Information Grid -->
+            <div class="info-grid">
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+
+                    <div>
+                        <span>Nama Panggilan</span>
+                        <strong id="displayPanggilan">Vishal</strong>
+                    </div>
+                </div>
+
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+
+                    <div>
+                        <span>Tempat, Tanggal Lahir</span>
+                        <strong id="displayTTL">
+                            Medan, 15 Januari 2010
+                        </strong>
+                    </div>
+                </div>
+
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-venus-mars"></i>
+                    </div>
+
+                    <div>
+                        <span>Jenis Kelamin</span>
+                        <strong id="displayGender">Laki-laki</strong>
+                    </div>
+                </div>
+
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div>
+                        <span>Alamat</span>
+                        <strong id="displayAlamat">
+                            Medan, Sumatera Utara
+                        </strong>
+                    </div>
+                </div>
+
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-school"></i>
+                    </div>
+
+                    <div>
+                        <span>Sekolah</span>
+                        <strong id="displaySekolahDetail">
+                            SMK Contoh Indonesia
+                        </strong>
+                    </div>
+                </div>
+
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+                    <div>
+                        <span>Kelas</span>
+                        <strong id="displayKelas">XII</strong>
+                    </div>
+                </div>
+
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <div>
+                        <span>Jurusan</span>
+                        <strong id="displayJurusan">
+                            Rekayasa Perangkat Lunak
+                        </strong>
+                    </div>
+                </div>
+
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <div>
+                        <span>Hobi</span>
+                        <strong id="displayHobi">
+                            Coding, Musik, Gaming
+                        </strong>
+                    </div>
+                </div>
+
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <div>
+                        <span>Cita-cita</span>
+                        <strong id="displayCitaCita">
+                            Software Developer
+                        </strong>
+                    </div>
+                </div>
+
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div>
+                        <span>Email</span>
+                        <strong id="displayEmail">
+                            vishal@example.com
+                        </strong>
+                    </div>
+                </div>
+
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <div>
+                        <span>Nomor Telepon</span>
+                        <strong id="displayTelepon">
+                            0812-3456-7890
+                        </strong>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Buttons -->
+            <div class="button-container">
+
+                <button id="detailBtn" class="btn btn-primary">
+                    <i class="fa-solid fa-eye"></i>
+                    Lihat Data Lengkap
+                </button>
+
+                <button id="editBtn" class="btn btn-secondary">
+                    <i class="fa-solid fa-pen"></i>
+                    Edit Data
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Detail Modal -->
+    <div id="detailModal" class="modal">
+
+        <div class="modal-content">
+
+            <button class="close-btn" id="closeDetail">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-header">
+                <i class="fa-solid fa-address-card"></i>
+                <h2>Data Diri Lengkap</h2>
+            </div>
+
+            <div class="detail-list">
+
+                <div>
+                    <span>Nama Lengkap</span>
+                    <strong id="modalNama"></strong>
+                </div>
+
+                <div>
+                    <span>Nama Panggilan</span>
+                    <strong id="modalPanggilan"></strong>
+                </div>
+
+                <div>
+                    <span>Tempat & Tanggal Lahir</span>
+                    <strong id="modalTTL"></strong>
+                </div>
+
+                <div>
+                    <span>Jenis Kelamin</span>
+                    <strong id="modalGender"></strong>
+                </div>
+
+                <div>
+                    <span>Alamat</span>
+                    <strong id="modalAlamat"></strong>
+                </div>
+
+                <div>
+                    <span>Sekolah</span>
+                    <strong id="modalSekolah"></strong>
+                </div>
+
+                <div>
+                    <span>Kelas</span>
+                    <strong id="modalKelas"></strong>
+                </div>
+
+                <div>
+                    <span>Jurusan</span>
+                    <strong id="modalJurusan"></strong>
+                </div>
+
+                <div>
+                    <span>Hobi</span>
+                    <strong id="modalHobi"></strong>
+                </div>
+
+                <div>
+                    <span>Cita-cita</span>
+                    <strong id="modalCitaCita"></strong>
+                </div>
+
+                <div>
+                    <span>Email</span>
+                    <strong id="modalEmail"></strong>
+                </div>
+
+                <div>
+                    <span>Nomor Telepon</span>
+                    <strong id="modalTelepon"></strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+
+        <div class="modal-content edit-content">
+
+            <button class="close-btn" id="closeEdit">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-header">
+                <i class="fa-solid fa-user-pen"></i>
+                <h2>Edit Data Diri</h2>
+            </div>
+
+
+            <form id="editForm">
+
+                <div class="form-group">
+                    <label for="nama">
+                        Nama Lengkap
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nama"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="panggilan">
+                        Nama Panggilan
+                    </label>
+
+                    <input
+                        type="text"
+                        id="panggilan"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="ttl">
+                            Tempat & Tanggal Lahir
+                        </label>
+
+                        <input
+                            type="text"
+                            id="ttl"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">
+                            Jenis Kelamin
+                        </label>
+
+                        <select id="gender" required>
+                            <option value="Laki-laki">
+                                Laki-laki
+                            </option>
+
+                            <option value="Perempuan">
+                                Perempuan
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="alamat">
+                        Alamat
+                    </label>
+
+                    <input
+                        type="text"
+                        id="alamat"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="sekolah">
+                        Sekolah
+                    </label>
+
+                    <input
+                        type="text"
+                        id="sekolah"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="kelas">
+                            Kelas
+                        </label>
+
+                        <input
+                            type="text"
+                            id="kelas"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jurusan">
+                            Jurusan
+                        </label>
+
+                        <input
+                            type="text"
+                            id="jurusan"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="hobi">
+                        Hobi
+                    </label>
+
+                    <input
+                        type="text"
+                        id="hobi"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="citaCita">
+                        Cita-cita
+                    </label>
+
+                    <input
+                        type="text"
+                        id="citaCita"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telepon">
+                            Nomor Telepon
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telepon"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="deskripsi">
+                        Deskripsi Tentang Saya
+                    </label>
+
+                    <textarea
+                        id="deskripsi"
+                        rows="4"
+                        required
+                    ></textarea>
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary save-btn"
+                >
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    Simpan Perubahan
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            © 2026 My Profile • Dibuat dengan
+            <i class="fa-solid fa-heart"></i>
+            menggunakan HTML, CSS & JavaScript
+        </p>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
